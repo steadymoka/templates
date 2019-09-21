@@ -1,6 +1,14 @@
 # Templates
 
-## server api
+my templates for full stack dev
+
+- api ( node / serverless / graphql )
+- db ( dynamDB )
+- web ( vue / nuxt )
+- android
+- ios
+
+## api
 
 - serverless-graphql (graphity)
 
