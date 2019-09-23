@@ -1,0 +1,55 @@
+service: serverless-graphql
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+# frameworkVersion: "=X.X.X"
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+provider:
+  name: aws
+  stage: ${opt:stage, 'dev'}
+  runtime: nodejs8.10
+  region: ap-northeast-2
+  timeout: 30
+  environment: ${file(.env.${self:provider.stage}.yml)}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+        - dynamodb:BatchGetItem
+        - dynamodb:batchWriteItem
+      Resource: 
+        - ${file(./.env.${self:provider.stage}.yml):TABLE_ARN}
+
+functions:
+  graphql:
+    handler: src/apollo-graphql.graphql
+    events:
+      - http:
+          path: /
+          method: ANY
+          cors:
+            origin: '*' # <-- Specify allowed origin
+            headers: # <-- Specify allowed headers
+              - Content-Type
+              - Authorization
+            allowCredentials: false
+      - http:
+          path: /{any+}
+          method: ANY
+          cors:
+            origin: '*' # <-- Specify allowed origin
+            headers: # <-- Specify allowed headers
+              - Content-Type
+              - Authorization
+            allowCredentials: false
+  

@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "lib": [
+      "es2017"
+    ],
+    "pretty": true,
+    "sourceMap": true,
+    "strict": true,
+    "experimentalDecorators": true,
+    "noImplicitReturns": true,
+    "esModuleInterop": true
+  },
+  "include": [
+    "src/**/*", "jwt.config.ts", "jwt.config.sample.ts"
+  ]
+}

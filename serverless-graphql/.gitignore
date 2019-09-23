@@ -1,0 +1,28 @@
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+
+# typescript .build 
+.build
+
+# direnv
+.envrc
+
+# environment
+.env.prod.yml
+.env.dev.yml
+
+# jwt.key
+jwt.key
+jwt.config.ts
+jwt.key.pem
+jwt.key.pub
+
+# webpack
+.webpack
+
+.DS_Store
+src/.DS_Store
