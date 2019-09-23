@@ -10,7 +10,7 @@ my templates for full stack dev
 
 ## api
 
-- serverless-graphql (graphity)
+- [serverless-graphql](/serverless-graphql) (with graphity)
 
 ## web-front
 
