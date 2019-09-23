@@ -1,14 +1,12 @@
 # Templates
 
-This is my templates for dev stack.
-
-I intend to do make by Fully-managed devops.
+This is my templates for dev stack. I intend to do make by Fully-managed devops.
 
 - server ( serverless / node / graphql )
 - db ( dynamDB )
 - web ( serverless / vue / nuxt )
 - android
-- ios
+- ios ( texture )
 - chrom-extension
 
 ## server

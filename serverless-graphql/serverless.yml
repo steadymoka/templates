@@ -28,7 +28,7 @@ provider:
         - dynamodb:BatchGetItem
         - dynamodb:batchWriteItem
       Resource: 
-        - ${file(./.env.${self:provider.stage}.yml):TABLE_ARN}
+        - TABLE_ARN # <-- Your dynamoDB table arn
 
 functions:
   graphql:
