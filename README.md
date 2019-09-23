@@ -1,14 +1,17 @@
 # Templates
 
-my templates for full stack dev
+This is my templates for dev stack.
 
-- api ( node / serverless / graphql )
+I intend to do make by Fully-managed devops.
+
+- server ( serverless / node / graphql )
 - db ( dynamDB )
-- web ( vue / nuxt )
+- web ( serverless / vue / nuxt )
 - android
 - ios
+- chrom-extension
 
-## api
+## server
 
 - [serverless-graphql](/serverless-graphql) (with [graphity](https://github.com/wan2land/graphity))
 
