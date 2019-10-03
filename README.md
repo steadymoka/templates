@@ -15,7 +15,7 @@ This is my templates for dev stack. I intend to do make by Fully-managed devops.
 
 ## web-front
 
-- serverless-nuxt
+- [serverless-nuxt](/serverless-nuxt)
 
 
 ## chrome-extension
