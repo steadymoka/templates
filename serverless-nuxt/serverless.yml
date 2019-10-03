@@ -1,0 +1,46 @@
+service:
+  name: {{serverless-nuxt-template}}
+
+plugins:
+  - serverless-nuxt/plugin
+  - serverless-domain-manager
+
+resources:
+  Resources:
+    AssetsBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${self:custom.nuxt.bucketName}
+        CorsConfiguration:
+          CorsRules:
+            - AllowedMethods:
+              - GET
+              - HEAD
+              AllowedOrigins:
+              - "*"
+
+provider:
+  name: aws
+  stage: ${opt:stage, 'dev'}
+  runtime: nodejs8.10
+  region: ${env:AWS_DEFAULT_REGION, 'us-east-1'}
+  environment:
+    NODE_ENV: ${file(.env.${self:provider.stage}.yml):NODE_ENV}
+
+custom:
+  nuxt:
+    version: v0.0.1
+    bucketName: serverless-nuxt-${self:provider.stage}
+  customDomain:
+    stage: prod
+    domainName: {{domainName}}
+    certificateName: {{certificateName}}
+    createRoute53Record: true
+    endpointType: regional
+
+functions:
+  nuxt:
+    handler: handler.render
+    events:
+      - http: ANY /
+      - http: ANY /{proxy+}

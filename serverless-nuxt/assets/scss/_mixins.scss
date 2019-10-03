@@ -1,0 +1,45 @@
+
+@mixin media-sm() {
+  @media screen and (max-width: 719px) {
+    @content;
+  }
+}
+
+@mixin media-md() {
+  @media screen and (min-width: 720px) {
+    @content;
+  }
+}
+
+@mixin media-lg() {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+
+@mixin media-resolution($resolution) {
+  @if $resolution == 1 {
+    @content;
+  } @else {
+    @media 
+           (   min--moz-device-pixel-ratio: $resolution),
+           (        min-device-pixel-ratio: $resolution),
+           (                min-resolution: $resolution * 96dpi),
+           (                min-resolution: $resolution * 1dppx) {
+              @content;
+    }  
+  }
+}
+
+@mixin media-2x() {
+  @include media-resolution(2) {
+    @content;
+  }
+}
+
+@mixin media-3x() {
+  @include media-resolution(3) {
+    @content;
+  }
+}

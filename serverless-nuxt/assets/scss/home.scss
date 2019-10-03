@@ -1,0 +1,26 @@
+
+@import "normalize.css/normalize.css";
+@import "./mixins";
+
+$container_width: 842px;
+$gutter: 40px;
+
+$white: #ffffff;
+$blue: #7151f4;
+$cyan: #a4d6ef;
+$gray: #9b9b9b;
+
+html {
+  font-family: "Spoqa Han Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+[class^="ico-"] {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
