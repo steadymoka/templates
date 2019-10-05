@@ -12,6 +12,7 @@ import { Container } from "@graphity/container"
 import { dynamom } from "./providers/dynamom-provider"
 import { jwt } from "./providers/jwt-provider"
 import { HomeResolver } from "./resolvers/home-resolver"
+import { UserResolver } from "./resolvers/user-resolver"
 
 const container = new Container()
 container.setToGlobal()
@@ -23,6 +24,7 @@ const app = express()
 const schema = createSchema({
   resolvers: [
     HomeResolver,
+    UserResolver,
   ],
   create: async (ctor) => {
     await container.boot()
