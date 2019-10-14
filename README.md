@@ -21,3 +21,7 @@ This is my templates for dev stack. I intend to do make by Fully-managed devops.
 ## chrome-extension
 
 - chrome-extension-vue
+
+## android
+
+- kotlin / mvvm / koin (see [https://github.com/moka-a/mokaastd](https://github.com/moka-a/mokaastd))
