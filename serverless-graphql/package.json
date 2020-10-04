@@ -4,9 +4,9 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "sls offline --stage dev",
-    "deploy:dev": "sls deploy --stage dev",
-    "deploy": "sls deploy --stage prod"
+    "dev": "env-cmd -e local sls offline --stage dev",
+    "deploy:dev": "env-cmd -e dev sls deploy --stage dev",
+    "deploy": "env-cmd -e prod sls deploy --stage prod"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
     "cors": "^2.8.5",
     "dataloader": "^1.4.0",
     "dynamom": "^0.2.0-alpha",
+    "env-cmd": "^10.1.0",
     "express": "^4.17.1",
     "graphity": "^0.5.0-alpha.1",
     "graphql": "^14.4.2",

@@ -14,6 +14,7 @@ jspm_packages
 # environment
 .env.prod.yml
 .env.dev.yml
+.env-cmdrc.js
 
 # jwt.key
 jwt.key
